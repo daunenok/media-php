@@ -4,8 +4,8 @@ require_once "inc/functions.php";
 $id = $_GET["id"];
 $item = $catalog[$id];
 $pageTitle = $item["title"];
-require_once "inc/header.php";
 $category = $item["category"];
+require_once "inc/header.php";
 ?>
 
 <div class="bred">
@@ -39,21 +39,21 @@ $category = $item["category"];
 			<th>Author:</th>
 			<td><?=$item["author"]?></td>
 		</tr>
-		<? endif; ?>
+		<?php endif; ?>
 
 		<?php if ($category == "movies"): ?>
 		<tr>
 			<th>Stars:</th>
 			<td><?=implode(", ", $item["stars"])?></td>
 		</tr>
-		<? endif; ?>
+		<?php endif; ?>
 
 		<?php if ($category == "music"): ?>
 		<tr>
 			<th>Artist:</th>
 			<td><?=$item["artist"]?></td>
 		</tr>
-		<? endif; ?>
+		<?php endif; ?>
 		</table>
 	</table>
 </div>

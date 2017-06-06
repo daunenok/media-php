@@ -1,5 +1,6 @@
 <?php 
 $pageTitle = "Personal Media Library";
+$category = "";
 if (isset($_GET["cat"])) {
 	$pageTitle = ucfirst($_GET["cat"]);
 	$category = $_GET["cat"];
@@ -12,7 +13,7 @@ require_once "inc/header.php";
 <h2><?php echo $pageTitle; ?></h2>
 
 <?php
-$output = isset($category) ? 
+$output = $category !== "" ? 
           array_cat($catalog, $category) : 
           array_rand($catalog, 4);
 

@@ -1,4 +1,13 @@
 <?php 
+$name = "";
+$email = "";
+$title = "";
+$cat = "";
+$genre = "";
+$year = "";
+$format = "";
+$message = "";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	$name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING));
 	$email = trim(filter_input(INPUT_POST, "email", FILTER_SANITIZE_EMAIL));
@@ -53,7 +62,7 @@ $pageTitle = "Suggest a Media Item";
 $category = "suggest";
 require_once "inc/header.php";
 
-if ($_GET["status"] == "thanks") {
+if (isset($_GET["status"]) && $_GET["status"] == "thanks") {
 	echo "<h2>Thank you for your suggestion!</h2>";
 } else {
 ?>
